@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block form %}
+<h1 align="center">Drugs for Symptoms and Sicknesses</h1>
+<table border='1'>
+    <tr>
+        <th>Drug Name</th>
+        <th>Symptom Name</th>
+        <th>Sickness Name</th>
+    </tr>
+    {% for drug in drugs %}
+    <tr>
+        <td>{{drug.name}}</td>
+        <td>{{drug.symname}}</td>
+        <td>{{drug.sickname}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

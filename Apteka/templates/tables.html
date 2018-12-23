@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block form %}
+{% if drugs %}
+<h1 align="center">Drugs</h1>
+<table border='1'>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Prescription</th>
+        <th>Change</th>
+        <th>Delete</th>
+    </tr>
+    {% for drug in drugs %}
+    <tr>
+        <td>{{drug.name}}</td>
+        <td>{{drug.description}}</td>
+        {% if drug.prescription == 1 %}
+        <td>По рецепту</td>
+        {% else %}
+        <td>Без рецепта</td>
+        {% endif %}
+        <td><a href="{{ url_for('change', changing=drug.iddrug, chtype='drug') }}"><button class="button">Change</button></a></td>
+        <td><a href="{{ url_for('delete', deleting=drug.iddrug, chtype='drug') }}"><button class="button">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% if symptoms %}
+<h1 align="center">Symptoms</h1>
+<table border='1'>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Change</th>
+        <th>Delete</th>
+    </tr>
+    {% for sym in symptoms %}
+    <tr>
+        <td>{{sym.name}}</td>
+        <td>{{sym.description}}</td>
+        <td><a href="{{ url_for('change', changing=sym.idsymptom, chtype='symptom') }}"><button class="button">Change</button></a></td>
+        <td><a href="{{ url_for('delete', deleting=sym.idsymptom, chtype='symptom') }}"><button class="button">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+
+{% if sicknesses %}
+<h1 align="center">Sicknesses</h1>
+<table border='1'>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Severity</th>
+        <th>Change</th>
+        <th>Delete</th>
+    </tr>
+    {% for sick in sicknesses %}
+    <tr>
+        <td>{{sick.name}}</td>
+        <td>{{sick.description}}</td>
+        <td>{{sick.severity}}</td>
+        <td><a href="{{ url_for('change', changing=sick.idsickness, chtype='sickness') }}"><button class="button">Change</button></a></td>
+        <td><a href="{{ url_for('delete', deleting=sick.idsickness, chtype='sickness') }}"><button class="button">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endblock %}

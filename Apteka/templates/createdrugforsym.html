@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block form %}
+<form action="" method="post" name="find">
+    {{ form.csrf_token }}
+    <h1>Drug </h1>
+    {{ form.drug }}
+    <h1>Symptom </h1>
+    {{ form.symptom }}
+    <p><input type="submit" class="form-element button" value="Create"></p>
+</form>
+<h1 align="center">Drugs and Symptoms</h1>
+<table border='1'>
+    <tr>
+        <th>Drug Name</th>
+        <th>Symptom Name</th>
+    </tr>
+    {% for drugsym in drugsyms %}
+    <tr>
+        <td>{{drugsym.name}}</td>
+        <td>{{drugsym.symname}}</td>
+    </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

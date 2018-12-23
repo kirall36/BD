@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link type= "text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}"/>
+    <title>Main</title>
+</head>
+<body>
+<div id='menu'>
+		<ul class="menu">
+            <li class="home">
+				<a href="{{ url_for('index') }}">BASE</a>
+			</li>
+			<li class="subject">
+				<a>Create new</a>
+				<a href="/create/drug">Drug</a>
+                <a href="/create/symptom">Symptom</a>
+                <a href="/create/sickness">Sickness</a>
+				<a href="/createdrugforsym">Drug for Symptom</a>
+				<a href="/createsymforsick">Symptom for Sickness</a>
+			</li>
+			<li class="settings">
+                <a>Statistics</a>
+				<a>Drugs count: {{ statistics_dict['drugs'] }}</a>
+                <a>Symptoms count: {{ statistics_dict['symptoms'] }}</a>
+                <a>Sicknesses count: {{ statistics_dict['sicknesses'] }}</a>
+				<a>Drug cured count: {{ statistics_dict['drugforsick'] }}</a>
+            </li>
+			<li class="find">
+                <a>Find</a>
+				<a href="/find/drug">Drug</a>
+                <a href="/find/symptom">Symptom</a>
+                <a href="/find/sickness">Sickness</a>
+            </li>
+			<li class="show">
+				<a>Show</a>
+				<a href="/drugforsymandsick">Drugs for symptoms and sicknesses</a>
+			</li>
+		</ul>
+	</div>
+    {% block form %}{% endblock %}
+
+</body>
+</html>

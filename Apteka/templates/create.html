@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block form %}
+<h1>Create {{ instance }}</h1>
+<form action="" method="post" name="find">
+    {{form.hidden_tag()}}
+    <p>
+        Name:<br>
+        {{ form.name }}<br>
+        {% for error in form.errors.name %}
+        <span class="error">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    <p>
+        Description:<br>
+        {{ form.description }}<br>
+        {% for error in form.errors.description %}
+        <span class="error">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    {% if instance == 'drug' %}
+    <p>
+        Prescription:<br>
+        {{ form.prescription }}<br>
+        {% for error in form.errors.prescription %}
+        <span class="error">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    {% endif %}
+    {% if instance == 'sickness' %}
+    <p>
+        Severity:<br>
+        {{ form.severity }}<br>
+        {% for error in form.errors.severity %}
+        <span class="error">[{{error}}]</span>
+        {% endfor %}<br>
+    </p>
+    {% endif %}
+    <p><input type="submit" class="form-element button" value="Create"></p>
+</form>
+{% endblock %}

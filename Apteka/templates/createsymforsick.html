@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block form %}
+ <form action="" method="post" name="find">
+     {{ form.csrf_token }}
+     <h1>Symptom </h1>
+     {{ form.symptom }}
+     <h1>Sickness</h1>
+     {{ form.sickness }}
+     <p><input type="submit" class="form-element button" value="Create"></p>
+ </form>
+<h1 align="center">Symptoms ans Sicknesses</h1>
+<table border='1'>
+    <tr>
+        <th>Symptom Name</th>
+        <th>Sickness Name</th>
+    </tr>
+    {% for symsick in symsicks %}
+    <tr>
+        <td>{{symsick.name}}</td>
+        <td>{{symsick.sickname}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

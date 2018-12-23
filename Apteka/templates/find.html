@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block form %}
+{% if findtype == "drug" %}
+<h1 align="center">Found Drug</h1>
+<table border='1'>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Prescription</th>
+        <th>Change</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>{{finder.name}}</td>
+        <td>{{finder.description}}</td>
+        {% if finder.prescription == 1 %}
+        <td>По рецепту</td>
+        {% else %}
+        <td>Без рецепта</td>
+        {% endif %}
+        <td><a href="{{ url_for('change', changing=finder.iddrug, chtype='drug') }}"><button class="button">Change</button></a></td>
+        <td><a href="{{ url_for('delete', deleting=finder.iddrug, chtype='drug') }}"><button class="button">Delete</button></a></td>
+    </tr>
+</table>
+{% endif %}
+
+{% if findtype == "symptom" %}
+<h1 align="center">Found Symptom</h1>
+<table border='1'>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Change</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>{{finder.name}}</td>
+        <td>{{finder.description}}</td>
+        <td><a href="{{ url_for('change', changing=finder.idsymptom, chtype='symptom') }}"><button class="button">Change</button></a></td>
+        <td><a href="{{ url_for('delete', deleting=finder.idsymptom, chtype='symptom') }}"><button class="button">Delete</button></a></td>
+    </tr>
+</table>
+{% endif %}
+
+{% if findtype == "sickness" %}
+<h1 align="center">Found Sickness</h1>
+<table border='1'>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Severity</th>
+        <th>Change</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>{{finder.name}}</td>
+        <td>{{finder.description}}</td>
+        <td>{{finder.severity}}</td>
+        <td><a href="{{ url_for('change', changing=finder.idsickness, chtype='sickness') }}"><button class="button">Change</button></a></td>
+        <td><a href="{{ url_for('delete', deleting=finder.idsickness, chtype='sickness') }}"><button class="button">Delete</button></a></td>
+    </tr>
+</table>
+{% endif %}
+{% endblock %}

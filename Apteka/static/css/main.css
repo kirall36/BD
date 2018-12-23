@@ -1,0 +1,269 @@
+.error{
+    color: red;
+}
+
+#hat{
+	display: block;
+	height: 35px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 0px;
+	background: #fff url(/static/images/logo.jpg) right no-repeat;
+	background-size: 35px;
+	z-index: 999;
+}
+
+#menu{
+	display: inline-block;
+	position: fixed;
+	top: 40px;
+	left: 5px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.form-element{
+	margin: 0px;
+	padding: 0px;
+}
+
+.button{
+min-width: 70px;
+	width: auto;
+	height: 25px;
+	border-radius: 10px;
+	background-color: #7582ff;
+	font-size: 14px;
+	font-style: italic;
+	font-weight: bold;
+	color: #fff;
+	overflow: hidden;
+	box-shadow: 2px 3px 5px rgba(0,0,0,.7);
+}
+
+.form-element.button{
+	min-width: 100px;
+	width: auto;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #00ffff;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: bold;
+	color: #fff;
+	overflow: hidden;
+	box-shadow: 2px 3px 5px rgba(0,0,0,.7);
+}
+
+.form-element.button:hover{
+	cursor: pointer;
+	color: #fff;
+	background-color: #a0a;
+}
+
+.form-element.button:active{
+	color: #eee;
+	background-color: #707;
+	
+	box-shadow: inset -1px -2px 15px #fff;
+}
+
+
+#flashed{
+	margin: 0px;
+	font-size: 24px;
+	text-shadow: 0px 1px 0px #fff;
+	font-family: Tahoma, Arial;
+}
+
+h1{
+	margin: 0px;
+	color: #032ca5;
+	text-shadow: 0px 1px 0px #fff;
+}
+
+body{
+	padding-left: 60px;
+	margin-top: 35px;
+	background: #bcfbff;
+	background: -moz-linear-gradient(-45deg, #ddddfb 5%, #fff 95%);
+	height: 100%;
+}
+
+#subjects-button{
+	display: block;
+}
+
+.menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	font: 1em 'PT Sans', Tahoma, Arial;
+	text-transform: uppercase;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 50px;
+}
+
+.menu li{
+	height: 50px;
+	width: 50px;
+	overflow: hidden;
+	
+	-moz-transition: width .3s ease-in-out, height .3s ease-in-out .3s;
+}
+
+.menu li:hover{
+	width: 250px;
+	height: 256px;
+	line-height: 256px;
+}
+
+.menu li.settings:hover{
+width: 250px;
+	height: 216px;
+	line-height: 216px;
+}
+
+.menu li.settings a:last-child{
+    width: 350px;
+}
+
+
+
+.menu li.home:hover{
+    width: 250px;
+    height: 50px;
+}
+
+.menu li a{
+	display: block;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	background: #bbb;
+	padding: 0px;
+	margin: 1px;
+	color: #fff;
+	padding-left: 15px;
+	cursor: pointer;
+
+	-moz-transition: background .3s ease-in-out;
+}
+
+.menu li.find:hover{
+width: 250px;
+	height: 176px;
+	line-height: 176px;
+}
+
+.menu li.show a{
+	display: block;
+	width: 200px;
+	height: 80px;
+	line-height: 40px;
+	background: #bbb;
+	padding: 0px;
+	margin: 1px;
+	color: #fff;
+	padding-left: 15px;
+	cursor: pointer;
+	
+	-moz-transition: background .3s ease-in-out;
+}
+
+.menu li a:first-child{
+	font-size: 1.1 em;
+	height: 50px;
+	line-height: 50px;
+	position: relative;
+	text-indent: 40px; 
+}
+
+.menu li a:hover{
+	background: #2fc5ff;
+}
+
+.menu li a:first-child:before{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	left: 0px;
+	opacity: .7;
+}
+
+.subject a:first-child:before{
+	background: url(/static/images/paper.png) center no-repeat;
+}
+
+.show a:first-child:before{
+    background: url(/static/images/show.png) center no-repeat;
+}
+
+.find a:first-child:before{
+	background: url(/static/images/info.png) center no-repeat;
+}
+
+.settings a:first-child:before{
+	background: url(/static/images/settings.png) center no-repeat;
+}
+
+.home a:first-child:before{
+    background: url(/static/images/home.png) center no-repeat;
+}
+
+.refactoring{
+    display: inline-block;
+}
+
+.refactor-atts{
+    margin:0;
+    padding:0;
+}
+
+table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+  background: white;
+  max-width: 1000%;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  margin: 10px;
+}
+
+th {
+  font-weight: bold;
+  color: #0329bb;
+  border-bottom: 2px solid #6678b1;
+  padding: 10px 8px;
+}
+
+td {
+  color: #0d0dad;
+  padding: 9px 8px;
+  transition: .3s linear;
+}
+
+.change{
+  display: inline-block;
+}
+
+div.change{
+  position:relative;
+}
+
+.change.button{
+  padding-top: 18px;
+  position: absolute;
+}
+
+.change.button-recipe{
+  padding-top: 50px;
+  position: absolute;
+}
